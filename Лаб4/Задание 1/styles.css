@@ -1,0 +1,101 @@
+.space {
+    background-color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spaceship {
+    position: relative;
+    width: 120px;
+    height: 200px;
+}
+
+.body {
+    position: absolute;
+    width: 80px;
+    height: 140px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    border-radius: 40px 40px 0 0;
+    left: 20px;
+    top: 0;
+    border: 2px solid #fff;
+}
+
+.cabin {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #f1c40f;
+    border-radius: 50%;
+    top: 30px;
+    left: 40px;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px #f1c40f;
+}
+
+.wing-left {
+    position: absolute;
+    width: 40px;
+    height: 80px;
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    transform: skew(20deg);
+    top: 60px;
+    left: 0;
+    border: 2px solid #fff;
+}
+
+.wing-right {
+    position: absolute;
+    width: 40px;
+    height: 80px;
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    transform: skew(-20deg);
+    top: 60px;
+    right: 0;
+    border: 2px solid #fff;
+}
+
+.flame {
+    position: absolute;
+    bottom: -40px;
+    left: 35px;
+    width: 50px;
+    height: 60px;
+    background: linear-gradient(to bottom, #f1c40f, #e74c3c);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    animation: flicker 0.3s infinite alternate;
+}
+
+@keyframes flicker {
+    0% {
+        transform: scaleY(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scaleY(1.2);
+        opacity: 1;
+    }
+}
+
+/* Добавляем базовые стили для body */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Добавляем анимацию полета */
+.spaceship {
+    animation: fly 2s infinite ease-in-out;
+}
+
+@keyframes fly {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
